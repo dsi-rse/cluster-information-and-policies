@@ -43,7 +43,7 @@ Please use MiniConda or MicroMamba to create a custom software environment tailo
 
 ### Is there a way to use the cluster via a GUI?
 
-You may be able to set up X11 forwarding for using software that requires a GUI. This is not the intended use of the cluster and while users are allowed to access X11 forwarding, it is not supported behavior. You can find a brief "How-to" [here](https://github.com/dsi-clinic/the-clinic/blob/main/tutorials/X11.md).
+You may be able to set up X11 forwarding for using software that requires a GUI. This is not the intended use of the cluster and while users are allowed to access X11 forwarding, it is not supported behavior. You can find a brief "How-to" [here](https://github.com/dsi-rse/the-clinic/blob/main/tutorials/X11.md).
 
 ### Can I use a containerized workflow, such as Docker?
 

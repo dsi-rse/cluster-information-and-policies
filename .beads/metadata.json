@@ -1,7 +1,0 @@
-{
-  "database": "dolt",
-  "backend": "dolt",
-  "dolt_mode": "embedded",
-  "dolt_database": "cluster_information_and_policies",
-  "project_id": "ff693dfe-e54d-46f2-bd88-4a3b0cc11575"
-}
