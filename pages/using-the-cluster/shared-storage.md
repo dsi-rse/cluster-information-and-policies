@@ -13,6 +13,8 @@ hide_hero: True
 
 The cluster provides several types of shared storage, each designed for a specific purpose. Understanding the differences between these storage tiers is crucial for managing your data effectively and ensuring the smooth operation of your research workflows.
 
+> **Heads up:** shared storage is migrating in phases to a new Lustre filesystem at `/net/spaces`, starting with scratch. The paths below still work today, but see the [Using Lustre guide]({{ '/using-the-cluster/lustre/' | relative_url }}) for what is changing and how to get the best performance from the new system.
+
 ## Storage Tiers
 
 There are three main storage tiers available to users on the cluster:
@@ -69,4 +71,5 @@ The scratch filesystem is a large, high-performance storage space for temporary 
 By following these guidelines, you can make the most of the cluster's storage resources and contribute to a stable and efficient computing environment for everyone.
 
 ## See also
+- [Using Lustre]({{ '/using-the-cluster/lustre/' | relative_url }})
 - [Checking your Usage]({{ '/using-the-cluster/checking-usage/' | relative_url }})

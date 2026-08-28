@@ -3,15 +3,15 @@ layout: default
 ---
 
 <div id="main" role="main">
-  <aside class="announcement-banner" role="region" aria-label="Login node infrastructure change">
+  <aside class="announcement-banner" role="region" aria-label="Storage migration announcement">
     <div class="announcement-banner__inner">
       <div class="announcement-banner__text">
         <span class="announcement-banner__eyebrow">Infrastructure Change</span>
-        <h2 class="announcement-banner__title">Login Node Changes — In Effect June 8, 2026</h2>
-        <p class="announcement-banner__body">Connect through the load balancer at <code>login.ds.uchicago.edu</code> — direct SSH to <code>fe01/fe02/fe03</code> has been retired. Login nodes are now limited to <strong>1 CPU and 8&nbsp;GB RAM</strong> per user with a 12-hour process limit. Update your SSH config and move heavy or agentic work to the compute nodes.</p>
+        <h2 class="announcement-banner__title">Storage Migration to Lustre — In Progress</h2>
+        <p class="announcement-banner__body">The cluster's shared storage is moving to a new high-performance Lustre filesystem at <code>/net/spaces</code> — scratch first, then project spaces and home directories. Expect <strong>scheduled maintenance windows and path changes</strong> over the coming weeks; each phase will be announced before it happens. Learn how the new filesystem works and how to get the best performance from it.</p>
       </div>
-      <a class="announcement-banner__cta" href="{{ '/using-the-cluster/login-nodes/' | relative_url }}">
-        What to do &rarr;
+      <a class="announcement-banner__cta" href="{{ '/using-the-cluster/lustre/' | relative_url }}">
+        Using Lustre &rarr;
       </a>
     </div>
   </aside>

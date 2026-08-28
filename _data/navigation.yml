@@ -36,6 +36,8 @@ main:
       #   url: "/using-the-cluster/debugging/"
       - title: "Shared Storage Overview"
         url: "/using-the-cluster/storage-overview/"
+      - title: "Using Lustre"
+        url: "/using-the-cluster/lustre/"
       - title: "Checking Your Usage"
         url: "using-the-cluster/checking-usage"        
   - title: "Advanced Topics"
