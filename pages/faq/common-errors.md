@@ -35,6 +35,20 @@ This page lists common error messages you might encounter while using the cluste
 
 ---
 
+### Error: `sbatch: error: Batch job submission failed: Requested node configuration is not available`
+
+**Cause:** Your job asks for a combination of resources that no node in the partition can provide. A common case is a **CPU-only job requesting too many cores**: GPU nodes reserve 2 cores per GPU for GPU jobs, so a CPU-only job on a GPU node can use at most `(node cores) − 2 × (node GPUs)`. A CPU-only request larger than that on every eligible node is rejected at submit.
+
+**Resolution:**
+
+- Lower `--cpus-per-task` / `--ntasks` so the request fits within the CPU-only max.
+- Split the work into smaller jobs or a job array.
+- Double-check `--mem`, `--gres`, and `--constraint` — an impossible combination of any of these produces the same error.
+
+See [CPU-only Jobs on GPU Nodes]({{ '/policies/scheduling/#cpu-only-jobs-on-gpu-nodes' | relative_url }}).
+
+---
+
 ### Error: `slurmstepd: error: *** JOB ... CANCELLED AT ... DUE TO TIME LIMIT ***`
 
 **Cause:** Your job ran for longer than the maximum allowed time for its QoS tier or partition. Behavior depends on the QoS tier:

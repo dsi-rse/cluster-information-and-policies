@@ -44,8 +44,8 @@ srun --partition=general --qos=interactive --gres=gpu:1 --time=02:00:00 --pty ba
 # Request a specific GPU type
 salloc --partition=general --qos=interactive --gres=gpu:1 --time=04:00:00 --constraint=h200
 
-# Request multiple GPUs (e.g., for testing sharding)
-salloc --partition=general --qos=interactive --gres=gpu:4 --time=04:00:00
+# Request multiple GPUs (interactive sessions are capped at 2)
+salloc --partition=general --qos=interactive --gres=gpu:2 --time=04:00:00
 
 # Request more memory
 salloc --partition=general --qos=interactive --gres=gpu:1 --time=04:00:00 --mem=64G
@@ -67,9 +67,10 @@ The interactive tier is intentionally constrained to keep it responsive for ever
 |-------|-------|--------|
 | Max sessions per user | **1** | Prevents agent-driven resubmission loops |
 | Max wall time | **4 hours** | Long enough for real dev work, short enough to prevent hoarding |
+| Max resources | **2 GPUs, 32 CPUs, 256 GB RAM** per user at a time | Keeps interactive capacity available for everyone |
 | Fairshare cost | **8x** | Premium pricing discourages using interactive for batch work |
 
-There is no hard GPU cap on interactive sessions. You can request as many GPUs as the partition allows (e.g., 8 GPUs on an 8-GPU node). However, the 8x fairshare cost applies to the entire allocation — a 4-hour session with 8 GPUs costs the same fairshare as 256 GPU-hours on the general tier. Use large interactive allocations only when genuinely necessary (e.g., testing sharding strategies).
+Interactive sessions are capped at **2 GPUs, 32 CPUs, and 256 GB of RAM per user** at a time. Requests above the cap are rejected at submit. The 8x fairshare cost applies to the entire allocation — a 4-hour session with 2 GPUs costs the same fairshare as 64 GPU-hours on the general tier — so request only what you need. If you need more than 2 GPUs (e.g., testing sharding across a full node), submit to `general` or `protected` instead.
 
 If you need longer wall time or multiple concurrent jobs, use the `general` tier. If you need a shorter guaranteed (non-preemptable) job, use `protected`.
 

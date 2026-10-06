@@ -56,7 +56,7 @@ The cluster uses a three-tier QoS system (rolled out May 7, 2026) in place of th
 
 - **`general`** — the default tier. Up to 24 concurrent jobs per user, 200 submitted, 12-hour wall time. Jobs are **preemptable** (with a 5-minute warning and automatic requeue) so that `interactive` sessions can start quickly.
 - **`protected`** — non-preemptable, guaranteed to complete. Limited to 1 job at a time, 2-hour max, 4x fairshare cost. Good for learners and short critical jobs.
-- **`interactive`** — highest priority, preempts `general` jobs so you get on a GPU fast. Limited to 1 session at a time, 4-hour max, 8x fairshare cost. For active development only.
+- **`interactive`** — highest priority, preempts `general` jobs so you get on a GPU fast. Limited to 1 session at a time, 4-hour max, at most 2 GPUs / 32 CPUs / 256 GB, 8x fairshare cost. For active development only.
 
 Jobs submitted without a `--qos=` flag run on `general`. The wall-time limit is 12 hours, and `general` jobs are **preemptable**: when an `interactive` session needs your GPU, your job receives `SIGUSR1` 5 minutes before being killed and is automatically requeued when a GPU frees up. To avoid losing progress on long runs, implement the [checkpoint contract]({{ '/using-the-cluster/batch-jobs/#the-checkpoint-contract' | relative_url }}).
 

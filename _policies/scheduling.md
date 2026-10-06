@@ -65,10 +65,11 @@ The `interactive` tier is designed for active, hands-on development: debugging c
 | Max concurrent jobs | **1 per user** |
 | Max submitted jobs | **1 per user** |
 | Max wall time | **4 hours** |
+| Max resources | **2 GPUs, 32 CPUs, 256 GB RAM per user** at a time |
 
 **Use this for:** Interactive development, debugging, Jupyter notebooks, any task where you need a human sitting at a terminal with real-time feedback.
 
-**Not for:** Batch training, sweeps, or any unattended computation. The 1-session limit and 4-hour wall time are enforced — requests that exceed these limits are rejected immediately. There is no GPU cap on interactive sessions; however, the 8x fairshare cost means large interactive allocations are expensive and should be used only when genuinely necessary (e.g., testing sharding strategies across multiple GPUs).
+**Not for:** Batch training, sweeps, or any unattended computation. The 1-session limit and 4-hour wall time are enforced — requests that exceed these limits are rejected immediately. Interactive allocations are capped at **2 GPUs, 32 CPUs, and 256 GB of RAM per user** at a time; requests above the cap are rejected at submit. Within the cap, the 8x fairshare cost still applies to the whole allocation, so request only what you need. If you need more than 2 GPUs (e.g., testing sharding strategies across a full node), use the `general` or `protected` tier.
 
 ## How to Specify a QoS Tier
 
@@ -86,6 +87,30 @@ salloc --qos=interactive --partition=general --gres=gpu:1 --time=04:00:00
 ```
 
 If you do not specify `--qos`, your job defaults to `general`.
+
+## Partitions
+
+The default partition is `dev` — jobs submitted without `--partition` run there. The `dev` partition runs on node `g009` (it previously ran on `g010`, which is now the [session node]({{ '/using-the-cluster/login-nodes/#session-node-g010' | relative_url }})).
+
+Not every node is in every partition; lab partitions are described under [Lab Partitions](#lab-partitions) below.
+
+## CPU-only Jobs on GPU Nodes
+
+GPU nodes reserve **2 CPU cores per GPU** for GPU jobs. A CPU-only job (one that requests no GPUs) on a GPU node can use at most:
+
+```
+CPU-only max = (cores on the node) − 2 × (GPUs on the node)
+```
+
+For example, on a node with 64 cores and 8 GPUs, a CPU-only job can use at most 64 − 16 = 48 cores. This keeps CPU-only work from leaving GPUs stranded without the cores needed to drive them.
+
+If a CPU-only job requests more cores than this on every node it could run on, Slurm rejects it at submit with:
+
+```
+sbatch: error: Batch job submission failed: Requested node configuration is not available
+```
+
+To fix it, lower `--cpus-per-task` / `--ntasks` (or split the work across multiple jobs or a job array). See [Common Errors]({{ '/faq/common-errors/' | relative_url }}).
 
 ## Preemption Policy
 

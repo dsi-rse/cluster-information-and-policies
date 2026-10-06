@@ -47,7 +47,7 @@ Every job runs under a QoS tier that determines its scheduling priority, preempt
 |------|------|----------------|--------------|----------|----------|
 | `general` | `--qos=general` (or omit) | 1x | Yes | 24 | Sweeps, training, batch work |
 | `protected` | `--qos=protected` | 4x | No | 1 | Learning, short guaranteed jobs |
-| `interactive` | `--qos=interactive` | 8x | No | 1 | Live development, debugging |
+| `interactive` | `--qos=interactive` | 8x | No | 1 (max 2 GPUs / 32 CPUs / 256 GB) | Live development, debugging |
 
 If you do not specify `--qos`, your job defaults to `general`. For the full tier specification — including fairshare math, wall-time limits, and the preemption hierarchy — see the [Job Scheduling Policy]({{ '/policies/scheduling/' | relative_url }}).
 

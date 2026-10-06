@@ -83,6 +83,26 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 **What this does and doesn't do.** It rebuilds your *workspace skeleton* — window/pane layout, working directories, and (for whitelisted programs) editors like `vim`/`nvim` — on whatever node you land on. It does **not** preserve the live state of running programs: a process is relaunched from scratch, not resumed mid-run. Combined with the 12-hour process limit below, the right mental model is "rebuild my editing workspace anywhere," not "resume a running job." For anything long-running, use a [batch job]({{ "/using-the-cluster/batch-jobs/" | relative_url }}) or an [interactive session]({{ "/using-the-cluster/interactive-sessions/" | relative_url }}) on a compute node.
 
+## Session node (g010)
+
+For long-lived terminal sessions — `tmux`, and code agents such as Claude Code, Codex, or herdr — there is a dedicated **session node**, `g010`. It gives you a stable host to keep a multiplexer or agent session on, without the login nodes' 1-CPU limit or the load balancer moving you between hosts.
+
+Reach it from any login node:
+
+```bash
+ssh <cnetid>@login.ds.uchicago.edu   # land on a login node
+ssh session                          # hop to the session node (g010)
+```
+
+| Property | Value |
+| --- | --- |
+| Hardware | CPU only (no GPUs) |
+| Per-user limit | 2 cores, 16&nbsp;GB RAM |
+| Intended for | `tmux`, Claude Code, Codex, herdr, and similar agent/terminal sessions |
+| Uptime | **No uptime guarantee** — the node may be rebooted or restarted |
+
+The session node is a place to *drive* your work, not to run it. **Compute work must still be submitted with `sbatch`** (or run in an [interactive session]({{ "/using-the-cluster/interactive-sessions/" | relative_url }})) — for example, have your agent submit batch jobs rather than training models on `g010` itself. Because there is no uptime guarantee, don't keep anything there you can't afford to lose; the `tmux-resurrect` setup above works here too since your home directory is shared.
+
 ## Login node resource limits
 
 Each user is limited on a login node to:
@@ -105,7 +125,8 @@ This is sufficient for what the login nodes are meant for:
 These limits do not stop you from running heavy or agentic workflows — you just run them on the compute nodes rather than on a login node:
 
 * **Long or compute-intensive work** → submit a [batch job]({{ "/using-the-cluster/batch-jobs/" | relative_url }}).
-* **Interactive development, notebooks, or running a code agent** → start an [interactive session]({{ "/using-the-cluster/interactive-sessions/" | relative_url }}) on a compute node.
+* **Running a code agent or keeping a long-lived `tmux` session** → use the [session node](#session-node-g010) (`ssh session` from a login node), and have it submit compute work with `sbatch`.
+* **Interactive development or notebooks** → start an [interactive session]({{ "/using-the-cluster/interactive-sessions/" | relative_url }}) on a compute node.
 * **Moving data** → `scp`/`rsync` through the same hostname; see [Transferring Data with rsync and scp]({{ "/advanced-topics/rsync-scp/" | relative_url }}).
 
 ## If a login node is full
