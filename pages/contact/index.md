@@ -9,7 +9,7 @@ For technical support, questions about your account, or issues with the cluster,
 
 ## Submit a Support Request
 
-Use the **Support** button in the bottom-right corner of this page to send a request directly to the DSI support team. Your submission will create a support ticket so our team can follow up with you.
+Click the message icon in the bottom-right corner of this page to send a request directly to the DSI support team. Your submission will create a support ticket so our team can follow up with you.
 
 <!-- FreeScout BEGIN -->
 <script>
@@ -42,7 +42,7 @@ Use the **Support** button in the bottom-right corner of this page to send a req
 
 ## Primary Contact
 
-**Email:** [techstaff@cs.uchicago.edu](mailto:techstaff@cs.uchicago.edu)
+**Email:** [dsisupport@uchicago.edu](mailto:dsisupport@uchicago.edu)
 
 ## Slack Support
 
