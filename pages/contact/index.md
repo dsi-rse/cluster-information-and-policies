@@ -7,9 +7,40 @@ classes: parent-centered
 
 For technical support, questions about your account, or issues with the cluster, please contact our support team. We are here to help you with any problems you may encounter while using the DSI computing resources.
 
-## Primary Contact
+## Contact DSI Support
 
-**Email:** [techstaff@cs.uchicago.edu](mailto:techstaff@cs.uchicago.edu)
+Click the message icon in the bottom-right corner of this page to send a request directly to the DSI support team. Your submission will create a support ticket so our team can follow up with you.
+
+If you prefer to contact us by email, write to [dsisupport@uchicago.edu](mailto:dsisupport@uchicago.edu). Your email will also create a support ticket.
+
+<!-- FreeScout BEGIN -->
+<script>
+  var FreeScoutW = {
+    s: {
+      color: "#bd0033",
+      position: "br",
+      locale: "en",
+      id: 919741400
+    }
+  };
+
+  (function (document, elementName, source) {
+    if (document.getElementById("freescout-w")) return;
+
+    var script = document.createElement(elementName);
+    var firstScript = document.getElementsByTagName(elementName)[0];
+
+    script.async = true;
+    script.id = "freescout-w";
+    script.src = source;
+    firstScript.parentNode.insertBefore(script, firstScript);
+  })(
+    document,
+    "script",
+    "https://dsi-helpdesk.ds.uchicago.edu/modules/enduserportal/js/widget.js?v=8012"
+  );
+</script>
+<!-- FreeScout END -->
 
 ## Slack Support
 
@@ -21,7 +52,7 @@ This is a good place to ask quick questions, get updates, and see answers to com
 
 ## Before You Contact Us
 
-To help us resolve your issue as quickly as possible, please consider including the following information in your email:
+To help us resolve your issue as quickly as possible, please include the following information in your support request or email when relevant:
 
 *   Your CNetID
 *   The Job ID of any relevant jobs
