@@ -9,16 +9,16 @@ classes: [wide, left-aligned]
 
 # Current Cluster Information
 
-As of September 2025, the following table summarizes the DSI cluster resources. Some resources are reserved for specific initiatives or grants.
+As of October 2026, the following table summarizes the DSI cluster resources. Some resources are reserved for specific initiatives or grants.
 
 ## Total Cluster Resources
 
 | Resource Type   | Number of Units |
 |:----------------|----------------:|
-| Number of Nodes | 29              |
-| Total Cores     | 2,720            |
-| Total Storage   | 1.5 PB          |
-| GPUs            | 32 NVIDIA A40 48GB  <br/> 60  NVIDIA A100 80GB <br/> 12 NVIDIA L40S 48GB  <br/> 16 NVIDIA H100 80GB  <br/> 20 NVIDIA H200 140GB <br/> Total: 140  |
+| Number of Nodes | 32              |
+| Total Cores     | 3,296           |
+| Total Storage   | 2.1 PB          |
+| GPUs            | 32 NVIDIA A40 48GB <br/> 60 NVIDIA A100 80GB <br/> 12 NVIDIA L40S 48GB <br/> 8 NVIDIA H100 80GB <br/> 8 NVIDIA H100 NVL 94GB <br/> 44 NVIDIA H200 141GB <br/> Total: 164 |
 
 
 
