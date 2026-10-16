@@ -117,7 +117,7 @@ Rather than 71 individual documents, related controls are grouped into ~12 conso
 **Controls:** ID.AM-03
 **Priority:** CRITICAL — Tier 2 gate requirement
 **Deliverable:** Diagram showing login nodes, compute nodes, storage, management network, external connectivity, firewall boundaries, and data flow directions.
-**What we know:** 29 nodes, 2720 cores, 140 GPUs, 1.5 PB storage. Need to document network topology, VLANs, and external access paths.
+**What we know:** 32 nodes, 3296 cores, 164 GPUs, 2.1 PB storage. Need to document network topology, VLANs, and external access paths.
 
 #### 2. Asset Management Policy & Procedure
 **Controls:** ID.AM-01.01, ID.AM-02.01, ID.AM-08.01 (3 controls)
@@ -359,8 +359,8 @@ NIST has published HPC-specific security guidance that should inform our policie
 |------|-------------|----------------|-------------|
 | Access Zone | User entry point | SSH gateway, login nodes | Credential harvesting, brute force |
 | Management Zone | Admin and control plane | SLURM controller, config management | Privilege escalation, config tampering |
-| Computing Zone | Job execution | 29 GPU/CPU nodes | Side-channel attacks, cryptomining, data leakage between users |
-| Data Storage Zone | Storage and archival | /home, /project, /scratch (1.5 PB) | Unauthorized access, data exfiltration |
+| Computing Zone | Job execution | 32 GPU/CPU nodes | Side-channel attacks, cryptomining, data leakage between users |
+| Data Storage Zone | Storage and archival | /home, /project, /scratch (2.1 PB) | Unauthorized access, data exfiltration |
 
 ### HPC-Specific Risks to Address in Documentation
 

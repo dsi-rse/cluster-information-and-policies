@@ -36,7 +36,7 @@ The minimum investment required to gain priority access to hardware is approxima
 
 As of autumn 2025, this investment looks like the following, with a total cost of roughly $115,000:
 
-* 4x Nvidia H200 80GB GPUs
+* 4x Nvidia H200 141GB GPUs
 * 2x Intel LGA4677 CPUs or AMD 9000 series
 * 1TB RAM 
 * Misc. server components and cables
