@@ -14,7 +14,7 @@ hide_hero: true
 Users of the DSI cluster must meet one of the following criteria:
 
 1. Have a DSI-related grant.
-2. Be a faculty member of the DSI or affiliated faculty.
+2. Be a DSI faculty member or an affiliated faculty member.
 3. Be a student with written approval from a DSI faculty mentor.
 
 If you are looking for compute resources and are more generally affiliated with the University, we recommend contacting [RCC](https://rcc.uchicago.edu/).
