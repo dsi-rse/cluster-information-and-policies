@@ -22,8 +22,8 @@ If you are looking for compute resources and are more generally affiliated with 
 ## Requesting Access
 
 - If you are working with a DSI PI, contact your PI or their designated delegate. PIs and delegates can use the [DSI Cluster CRM](https://dsi-cluster-crm.ds.uchicago.edu/) to add and manage users associated with their projects.
-- If you are a DSI PI or delegate and do not yet have access to the CRM, contact [DSI Support](mailto:dsisupport@uchicago.edu).
-- If you are not working with a DSI PI, contact [DSI Support](mailto:dsisupport@uchicago.edu) directly.
+- If you are a DSI PI or delegate and do not yet have access to the CRM, contact DSI Support at [dsisupport@uchicago.edu](mailto:dsisupport@uchicago.edu).
+- If you are not working with a DSI PI, contact DSI Support directly at [dsisupport@uchicago.edu](mailto:dsisupport@uchicago.edu).
 
 When contacting DSI Support, please include:
 
