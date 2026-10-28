@@ -29,4 +29,4 @@ When contacting DSI Support, please include:
 
 - Your **CNetID**
 - A brief description of your **DSI affiliation**
-- The name of your **DSI PI**, if applicable
+- If you are working under a PI, **CC your PI** on the email
