@@ -6,29 +6,27 @@ parent: Quickstart
 category: quickstart
 permalink: /quickstart/accounts/
 classes: [wide, left-aligned]
-hide_hero: True
+hide_hero: true
 ---
 
 # Getting Access
 
 Users of the DSI cluster must meet one of the following criteria:
 
-1.  Have a DSI-related grant.
-2.  Be a faculty member of the DSI or an affiliated faculty.
-3.  Be a student with written approval from a DSI faculty mentor.
+1. Have a DSI-related grant.
+2. Be a DSI faculty member or an affiliated faculty member.
+3. Be a student with written approval from a DSI faculty mentor.
 
 If you are looking for compute resources and are more generally affiliated with the University, we recommend contacting [RCC](https://rcc.uchicago.edu/).
 
 ## Requesting Access
 
-To gain access to the DSI cluster, you must email the tech staff team directly. Please follow these steps:
+- If you are working with a DSI PI, contact your PI or their designated delegate. PIs and delegates can use the [DSI Cluster CRM](https://dsi-cluster-crm.ds.uchicago.edu/) to add and manage users associated with their projects.
+- If you are a DSI PI or delegate and do not yet have access to the CRM, contact DSI Support at [dsisupport@uchicago.edu](mailto:dsisupport@uchicago.edu).
+- If you are not working with a DSI PI, contact DSI Support directly at [dsisupport@uchicago.edu](mailto:dsisupport@uchicago.edu).
 
-1. Send an email to **[techstaff@cs.uchicago.edu](mailto:techstaff@cs.uchicago.edu)**.  Making sure to mention that this is about the _DSI_ cluster, as there are multiple clusters on campus.
-2. In your email, include:  
-   - Your **CNetID**  
-   - A brief description of your **access affiliation**  
-   - If you are working under a PI, **CC your PI** on the email   
-3. The tech staff will review your request and contact you once your account has been created.  
+When contacting DSI Support, please include:
 
-
-
+- Your **CNetID**
+- A brief description of your **DSI affiliation**
+- If you are working under a PI, **CC your PI** on the email
