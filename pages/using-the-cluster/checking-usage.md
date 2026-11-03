@@ -88,22 +88,20 @@ Regularly checking your usage with `dsiquota` helps prevent interruptions to you
 
 ### Project directories
 
-To check space usage assigned to a project:
+To check space usage assigned to a project, give its directory under `/net/spaces`:
 
 ```bash
-dsiquota --project <PROJECT_NAME>
-# or, if the project is on /net/projects2
-dsiquota --project2 <PROJECT_NAME>
+dsiquota --project <PI_CNETID>/<PROJECT_NAME>
+# e.g. a DSI clinic project
+dsiquota --project clinic/<PROJECT_NAME>
 ```
 
-Note: Use `--project` for `/net/projects/...` and `--project2` for `/net/projects2/...`.
-
-### Scratch locations
+### Scratch
 
 ```bash
 dsiquota --scratch
-
-dsiquota --scratch2
 ```
 
-These commands return your current usage and any limits for the scratch locations.
+This returns your current usage and limit on `/net/spaces/scratch`.
+
+Note: `--scratch2` and `--monsoon` no longer exist; `/net/scratch2` is merged into `/net/spaces/scratch`.
